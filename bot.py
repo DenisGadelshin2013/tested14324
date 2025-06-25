@@ -60,7 +60,7 @@ def handle_update(update_json):
     from telegram.ext import ApplicationBuilder
 
     async def process():
-        application = Application.builder().token(BOT_TOKEN).build()
+        application = Application.builder().token(BOT_TOKEN).updater(None).build()
         application.add_handler(CommandHandler("start", start))
         application.add_handler(CommandHandler("sendcode", send_code))
         application.add_handler(CommandHandler("notify", notify))
